@@ -35,3 +35,4 @@ bower.json
 .powenv
 Gemfile.lock
 /config/database.yml
+/public/upload_images/
