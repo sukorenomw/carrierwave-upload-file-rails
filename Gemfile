@@ -32,7 +32,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'carrierwave'
+# gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -25,8 +25,19 @@ class ImagesController < ApplicationController
   	@image = Image.find_by_id(params[:id])
   end
 
+  def destroy
+  	@image = Image.find_by_id(params[:id])
+  	if @image.destroy
+        flash[:notice] = "Image successfully deleted"
+        redirect_to action: 'index'
+    else
+        flash[:error] = "fails delete a records"
+        redirect_to action: 'index'
+    end
+  end
+
   private
   	def img_params
-      params.require(:image).permit(:title, :image)
+      params.require(:image).permit(:title, :attachment)
     end
 end
