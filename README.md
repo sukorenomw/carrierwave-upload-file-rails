@@ -1,3 +1,2 @@
 # training_wgs_4
-branch master paperclip
-bracn dev carrierwave
+merge dev to master, all branch is now using carrierwave
