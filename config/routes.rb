@@ -1,4 +1,8 @@
 Task4::Application.routes.draw do
+  get "images/new"
+  get "images/index"
+  get "images/show"
+  get "images/edit"
   root "images#index"
   resources :images
   # The priority is based upon order of creation: first created -> highest priority.

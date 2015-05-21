@@ -63,6 +63,16 @@
 		}
 	</style>
 <% end -%>
+<div id="column">
+	<div class="container">
+		<% if flash[:notice] %>
+			<div class="alert alert-success" style="margin-top:2%">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<strong>Success!</strong> <%= flash[:notice] %>
+			</div>
+		<% end %>
+	</div>
+</div>
 <div id="columns">
 	<%= link_to "Upload Image", {:controller => "images", :action => "new"}, :class => "btn btn-sm btn-primary" %>
 </div>
@@ -70,8 +80,9 @@
 	<% @images.each do | img | %>
 	<a href="<%= image_path(img.id) %>">
   	<figure>
-  		<%= image_tag img.image.url(:thumb) %>
+  		<%= image_tag img.image.url(:thumb) if img.image? %>
 		<figcaption><%= img.title %></figcaption>
+		<%= link_to 'Edit', edit_image_path(img.id), :class => "btn btn-xs btn-success" %>
 		<%= link_to 'Delete', image_path(img.id), method: "DELETE", data: {confirm: 'Delete image ? '}, :class => "btn btn-xs btn-danger" %>
 	</figure>	
 	</a>

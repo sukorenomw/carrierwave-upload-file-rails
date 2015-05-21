@@ -1,0 +1,16 @@
+<% content_for :index do -%>
+	<style>
+		.img-center {margin:0 auto 2% auto;}
+	</style>
+<% end %>
+<div class="container">
+	<div class="page-header">
+	  <h1><%= @image.title %></h1>
+	</div>
+	<div class="row">
+		<%= image_tag @image.image.url(:display), :class => "img-center"%>
+	</div>
+	<div class="row">
+		<%= link_to "Back", {:controller => "images", :action => "index" }, :class => "btn btn-success" %>
+	</div>
+</div>

@@ -32,6 +32,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'rmagick'
 gem 'carrierwave'
 # gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 # Use ActiveModel has_secure_password
